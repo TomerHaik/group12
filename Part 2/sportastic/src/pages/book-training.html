@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" type="image/png" href="../img/icon.png" />
+    <title>Sportastic</title>
+  </head>
+  <body>
+    <div class="head"></div>
+    <div class="cont fade-in">
+      <div class="page-heading">
+        <h1>שלב ראשון בדרך ליעד</h1>
+      </div>
+      <div id="book-training">
+        <form>
+          <div>
+            <label for="day">יום בשבוע:</label>
+            <select name="day" required>
+              <option selected value="all">הכל</option>
+              <option value="0">ראשון</option>
+              <option value="1">שני</option>
+              <option value="2">שלישי</option>
+              <option value="3">רביעי</option>
+              <option value="4">חמישי</option>
+              <option value="5">שישי</option>
+              <option value="6">שבת</option>
+            </select>
+          </div>
+          <br />
+          <div>
+            <label for="type">סוג אימון:</label>
+            <select name="type" required>
+              <option selected value="all">הכל</option>
+              <option value="functional">פונקציונאלי</option>
+              <option value="power">כוח</option>
+              <option value="pilates">פילאטיס</option>
+              <option value="ber">בר</option>
+              <option value="aerobic">אירובי מדרגות</option>
+            </select>
+          </div>
+        </form>
+        <div>
+          <div class="scrollbar" id="book-training-list"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../js/script.js"></script>
+  </body>
+</html>
