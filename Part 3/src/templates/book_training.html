@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/icon.png') }}" />
+    <title>Sportastic</title>
+    <script>
+      window.flaskUrls = {
+        about: "{{ url_for('about') }}",
+        home: "{{ url_for('home') }}",
+        signup: "{{ url_for('signup') }}",
+        login: "{{ url_for('login') }}",
+        contact: "{{ url_for('contact') }}",
+        bookTraining: "{{ url_for('book_training') }}",
+        myTraining:  "{{ url_for('my_training') }}"
+      };
+
+      window.flaskStaticImg = "{{ url_for('static', filename='img/') }}";
+    </script>
+  </head>
+  <body>
+    <div class="head"></div>
+    <div class="cont fade-in">
+      <div class="page-heading">
+        <h1>שלב ראשון בדרך ליעד</h1>
+      </div>
+      <div id="book-training">
+        <form>
+          <div>
+            <label for="day">יום בשבוע:</label>
+            <select name="day" required>
+              <option selected value="all">הכל</option>
+              <option value="0">ראשון</option>
+              <option value="1">שני</option>
+              <option value="2">שלישי</option>
+              <option value="3">רביעי</option>
+              <option value="4">חמישי</option>
+              <option value="5">שישי</option>
+              <option value="6">שבת</option>
+            </select>
+          </div>
+          <br />
+          <div>
+            <label for="type">סוג אימון:</label>
+            <select name="type" required>
+              <option selected value="all">הכל</option>
+              <option value="functional">פונקציונאלי</option>
+              <option value="power">כוח</option>
+              <option value="pilates">פילאטיס</option>
+              <option value="ber">בר</option>
+              <option value="aerobic">אירובי מדרגות</option>
+            </select>
+          </div>
+        </form>
+        <div>
+          <div class="scrollbar" id="book-training-list"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

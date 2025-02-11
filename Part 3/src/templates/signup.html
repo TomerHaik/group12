@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/icon.png') }}" />
+    <title>Sportastic</title>
+    <script>
+      window.flaskUrls = {
+        about: "{{ url_for('about') }}",
+        home: "{{ url_for('home') }}",
+        signup: "{{ url_for('signup') }}",
+        login: "{{ url_for('login') }}",
+        contact: "{{ url_for('contact') }}",
+        bookTraining: "{{ url_for('book_training') }}",
+        myTraining:  "{{ url_for('my_training') }}"
+      };
+
+      window.flaskStaticImg = "{{ url_for('static', filename='img/') }}";
+    </script>
+  </head>
+  <body>
+    <div class="head"></div>
+    <div class="cont fade-in">
+      <div class="page-heading" data-icon="true">
+        <h1>יצרת חשבון</h1>
+        <img src="{{ url_for('static', filename='img/icons/user.svg') }}" alt="Signup" />
+      </div>
+      <form id="signup">
+        <div>
+          <label for="email">דואר אלקטרוני</label>
+          <input class="ltr" type="email" name="email" required />
+        </div>
+        <div>
+          <label for="password">סיסמה</label>
+          <input class="ltr" type="password" name="password" required />
+        </div>
+        <div>
+          <label for="first-name">שם פרטי</label>
+          <input type="text" name="first-name" required />
+        </div>
+        <div>
+          <label for="last-name">שם משפחה</label>
+          <input type="text" name="last-name" required />
+        </div>
+        <div>
+          <label for="phone">מספר פלאפון</label>
+          <input
+            class="form-number-input ltr"
+            type="text"
+            name="phone"
+            required
+          />
+        </div>
+        <div>
+          <label for="age">גיל</label>
+          <input class="ltr" type="number" name="age" min="0" required />
+        </div>
+        <div>
+          <label for="height">גובה (ס"מ)</label>
+          <input class="ltr" type="number" name="height" step="0.01" required />
+        </div>
+        <div>
+          <label for="weight">משקל (קילוגרם)</label>
+          <input class="ltr" type="number" name="weight" step="0.1" required />
+        </div>
+
+        <p>
+          כבר יש לך משתמש? עבור להתחטב
+          <a href="{{ url_for('login') }}">כאן</a>
+        </p>
+        <div>
+          <button type="submit">יצירת חשבון</button>
+          <button
+            onclick="window.location.href='index.html'"
+            type="button"
+          >
+            חזרה
+          </button>
+        </div>
+      </form>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/icon.png') }}" />
+    <title>Sportastic</title>
+    <script>
+      window.flaskUrls = {
+        about: "{{ url_for('about') }}",
+        home: "{{ url_for('home') }}",
+        signup: "{{ url_for('signup') }}",
+        login: "{{ url_for('login') }}",
+        contact: "{{ url_for('contact') }}",
+        bookTraining: "{{ url_for('book_training') }}",
+        myTraining:  "{{ url_for('my_training') }}"
+      };
+
+      window.flaskStaticImg = "{{ url_for('static', filename='img/') }}";
+    </script>
+  </head>
+  <body id="home">
+    <div>
+      <h4>@SportasticIL</h4>
+      <div>
+        <a href="#" class="icon" data-color="white">
+          <img src="../static/img/icons/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="#" class="icon" data-color="white">
+          <img src="../static/img/icons/facebook.svg" alt="Facebook" />
+        </a>
+        <a href="#" class="icon" data-color="white">
+          <img src="../static/img/icons/x.svg" alt="X" />
+        </a>
+        <a href="#" class="icon" data-color="white">
+          <img src="../static/img/icons/linkedin.svg" alt="LinkedIn" />
+        </a>
+      </div>
+    </div>
+    <h1>Sportastic</h1>
+    <div>
+      <a href="{{ url_for('login') }}">התחברות</a>
+      <a href="{{ url_for('contact') }}">יצירת קשר</a>
+      <a href="{{ url_for('about') }}">קצת עלינו</a>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

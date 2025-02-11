@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/icon.png') }}"/>
+    <title>Sportastic</title>
+    <script>
+        window.flaskUrls = {
+            about: "{{ url_for('about') }}",
+            home: "{{ url_for('home') }}",
+            signup: "{{ url_for('signup') }}",
+            login: "{{ url_for('login') }}",
+            contact: "{{ url_for('contact') }}",
+            bookTraining: "{{ url_for('book_training') }}",
+            myTraining:  "{{ url_for('my_training') }}"
+        };
+
+        window.flaskStaticImg = "{{ url_for('static', filename='img/') }}";
+    </script>
+</head>
+<body>
+<div class="head"></div>
+<div class="cont fade-in">
+    <div class="page-heading">
+        <h1>קצת עלינו</h1>
+    </div>
+    <div id="about">
+        <div>
+            <p>
+                ברוכים הבאים לספורטאסטיק!
+                <br/>
+                אנחנו כאן כדי לעזור לכם להגשים את המטרות שלכם עם ליווי מקצועי, יחס
+                אישי ותוכנית מותאמת בדיוק לצרכים שלכם.
+                <br/>
+                הצוות שלנו כולל מאמנים מוסמכים ומנוסים המתמחים בפיתוח כושר, שיפור
+                סיבולת, עיצוב הגוף ובניית אורח חיים בריא.
+            </p>
+
+            <hr data-color="white"/>
+
+            <p>כתובתנו: רחוב פאמפ ,1 שכונת שרירי הברזל, תל אביב.</p>
+            <p>שעות פעילות:</p>
+            <ul>
+                <li>
+                    <span>ראשון-חמישי:</span>
+                    <span>06:00 - 22:00</span>
+                </li>
+                <li>
+                    <span>שישי:</span>
+                    <span>06:00 - 14:00</span>
+                </li>
+                <li>
+                    <span>שבת:</span>
+                    <span>08:00 - 23:00</span>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <img src="../static/img/logo.jpg" alt="Sportastic"/>
+            <div>
+                <h4>@SportasticIL</h4>
+                <div>
+                    <a href="#" class="icon" data-color="white">
+                        <img src="../static/img/icons/instagram.svg" alt="Instagram"/>
+                    </a>
+                    <a href="#" class="icon" data-color="white">
+                        <img src="../static/img/icons/facebook.svg" alt="Facebook"/>
+                    </a>
+                    <a href="#" class="icon" data-color="white">
+                        <img src="../static/img/icons/x.svg" alt="X"/>
+                    </a>
+                    <a href="#" class="icon" data-color="white">
+                        <img src="../static/img/icons/linkedin.svg" alt="LinkedIn"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="module" defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

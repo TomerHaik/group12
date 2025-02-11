@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/icon.png') }}" />
+    <title>Sportastic</title>
+    <script>
+      window.flaskUrls = {
+        about: "{{ url_for('about') }}",
+        home: "{{ url_for('home') }}",
+        signup: "{{ url_for('signup') }}",
+        login: "{{ url_for('login') }}",
+        contact: "{{ url_for('contact') }}",
+        bookTraining: "{{ url_for('book_training') }}",
+        myTraining:  "{{ url_for('my_training') }}"
+      };
+
+      window.flaskStaticImg = "{{ url_for('static', filename='img/') }}";
+    </script>
+  </head>
+  <body>
+    <div class="head"></div>
+    <div class="cont fade-in">
+      <div class="page-heading" data-icon="true">
+        <h1>יצירת קשר</h1>
+        <img src="../static/img/icons/email.svg" alt="יצירת קשר" />
+      </div>
+
+      <form id="contact">
+        <div>
+          <label for="full-name">שם מלא</label>
+          <input type="text" name="full-name" required />
+        </div>
+        <div>
+          <label for="phone">מספר פלאפון</label>
+          <input
+            class="form-number-input ltr"
+            type="text"
+            name="phone"
+            required
+          />
+        </div>
+        <div>
+          <label for="email">דואר אלקטרוני</label>
+          <input class="ltr" type="email" name="email" required />
+        </div>
+        <div>
+          <label for="body">הודעה</label>
+          <textarea name="body" rows="3" required></textarea>
+        </div>
+        <div>
+          <button type="submit">שלח</button>
+        </div>
+      </form>
+    </div>
+    <script type="module" src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
